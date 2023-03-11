@@ -1,5 +1,7 @@
 import React from 'react'
 import { Heading,Box} from "@chakra-ui/react";
+import Carousel from './Carousel';
+import Products from './Products';
 const HomePage = () => {
   let token=JSON.parse(localStorage.getItem("Token"))
   let welcome1=JSON.parse(localStorage.getItem("Welcome1"))
@@ -15,7 +17,15 @@ const HomePage = () => {
 
   if(token){
     return (
-      <div>HomePage</div>
+     <Box>
+      <Box alignItems={"center"} marginLeft="37%"  marginRight="10%">
+      <Carousel/>
+      
+     </Box>
+     <Box>
+      <Products/>
+     </Box>
+     </Box>
     )
   }
   else{
