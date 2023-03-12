@@ -19,8 +19,9 @@
   display: flex;
   gap:5px;
   margin-left: auto;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+
 }
 
 .menu a {

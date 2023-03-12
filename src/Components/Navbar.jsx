@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import Dropdown from './Dropdown';
 const Navbar = () => {
+  let cart=JSON.parse(localStorage.getItem("cart"))
 let profile=JSON.parse(localStorage.getItem("Token"))
   return (
     <div className="header">
@@ -20,7 +21,7 @@ let profile=JSON.parse(localStorage.getItem("Token"))
 
       <ul className="menu">
       {profile?<Dropdown/>:<Link to="/login">Login</Link>}
-        <Link to="/cart"><AiOutlineShoppingCart size={"35px"}/></Link>
+        <Link to="/cart" style={{display:"flex"}}><AiOutlineShoppingCart size={"35px"}/>{cart.length}</Link>
         <label htmlFor="chk" className="hide-menu-btn">
          <AiOutlineMenu/>
         </label>

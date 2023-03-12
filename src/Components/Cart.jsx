@@ -60,9 +60,9 @@ const Cart = () => {
                   <CardFooter>
                     <ButtonGroup spacing="2">
                         <Box alignItems={"center"}>
-                          <Button onClick={()=>handleInc}>+</Button>
+                          <Button onClick={()=>handleInc(ele,i)}>+</Button>
                           {val}
-                          <Button onClick={handleDec}>-</Button>
+                          <Button onClick={()=>handleDec(ele,i)}>-</Button>
                         </Box>
                 
                     </ButtonGroup>
