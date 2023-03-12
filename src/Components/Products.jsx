@@ -19,10 +19,15 @@ import {
   Select,
 } from "@chakra-ui/react";
 const Products = () => {
+  // Data hook for API's data
+  // Token for checking user Login or Not
+  // Cart for add to cart fun
   const [data, setData] = useState([]);
   let token = JSON.parse(localStorage.getItem("Token"));
   let item = [];
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Here is fetching Data API's
   // https://fakestoreapi.com/products
   function fetchData(url) {
     return new Promise((resolve, reject) => {
@@ -42,6 +47,7 @@ const Products = () => {
     });
   }
 
+  // Add To cart Func
   const handleCart = (ele, id) => {
     console.log(ele);
     cart.push(ele);

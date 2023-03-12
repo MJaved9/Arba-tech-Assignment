@@ -2,6 +2,7 @@ import React from 'react'
 import { useState,useEffect } from "react";
 import {Box,Button,Flex,Image, Img} from "@chakra-ui/react"
 const Carousel = () => {
+  // here is static images for slider and hooks for changing values
   const [a, setA] = useState(0);
   let slideImageData = [
     {
@@ -24,14 +25,17 @@ const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideLength = slideImageData.length;
 
+  // for next image 
   const nextSlide = () => {
     setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
   };
 
+  // Login for previous Image
   const prevSlide = () => {
     setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1);
   };
 
+  // This autoscroll and auto slide is for auto change image in a particular time..
   const autoScroll = true;
   let slideInterval;
   let intervalTime = 3000;

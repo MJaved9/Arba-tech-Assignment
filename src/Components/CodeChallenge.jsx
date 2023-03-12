@@ -13,10 +13,15 @@ import {
 import React, { useState } from "react";
 
 const CodeChallenge = () => {
+  // Token for checking user Login or Not
   let token = JSON.parse(localStorage.getItem("Token"));
   const [number, setNumber] = useState(Number);
+  // Number hooks for use to convert input number into array
   let answer=""
+  // Answer is for Output
   const [show,setShow]=useState("")
+
+  // Print function for Calling output
 const print=()=>{
   setShow(answer)
 }
@@ -43,6 +48,7 @@ const print=()=>{
     }
 
    let s=number.split("").map(Number);
+  //  check function for checking value is under Range or Not
    function check(){
     let n=number.length;
     for(let i=0;i<number.length;i++){

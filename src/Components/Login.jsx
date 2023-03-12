@@ -15,14 +15,18 @@ import {
 
 } from "@chakra-ui/react";
 const Login = () => {
+  // Navigation for Redirect next page
+  // SHow hook for Password hide show func
   const navigate=useNavigate()
   const [show, setShow] = React.useState(false)
   const handleClick = () => setShow(!show)
 
+  // custome hooks for User fields
   let data = JSON.parse(localStorage.getItem("profile"));
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [log,setLog]=useState(false)
+  // Login Logic for Existing user 
   const handleLogin = () => {
     console.log(data);
       if (data.userName === userName && data.password === password) {

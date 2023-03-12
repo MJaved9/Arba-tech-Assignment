@@ -22,10 +22,15 @@ import Carousel from './Carousel';
 import Products from './Products';
 import { Link } from 'react-router-dom';
 const HomePage = () => {
+  // Data is for API Data
   const [data,setData]=useState([])
+  // Token for checking User Login or Not
   let token=JSON.parse(localStorage.getItem("Token"))
+
   let item = [];
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Here is welcome Logic for is user visit first time show Prompt accept and reject
   let welcome1=JSON.parse(localStorage.getItem("Welcome1"))
   if(!welcome1){
     let text="welcome hii this is profile page.."
@@ -36,6 +41,7 @@ const HomePage = () => {
       text = "You canceled!";
     }
   }
+  // Fetching API's Data
   function fetchData(url) {
     return new Promise((resolve, reject) => {
       fetch(url)
@@ -53,6 +59,8 @@ const HomePage = () => {
         });
     });
   }
+
+  // Add to cart Function 
   const handleCart = (ele, id) => {
     console.log(ele);
     cart.push(ele);

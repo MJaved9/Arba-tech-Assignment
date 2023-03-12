@@ -19,6 +19,7 @@ import {
   Select,
 } from "@chakra-ui/react";
 const Cart = () => {
+  // Val hook for use inc and dec try to add..
   const [val,setVal]=useState(1)
   const handleInc=()=>{
     setVal(val+1)
@@ -28,11 +29,13 @@ const Cart = () => {
       setVal(val-1)
     }
   }
+  // cart lS for added cart Item..
   let cart=JSON.parse(localStorage.getItem("cart"))
   return (
     <Box p="15">
       <Box p="25">
       <SimpleGrid columns={[1, 1, 2, 4]} spacing="40px">
+        {/* Fetching all cart data and add in simple grid  */}
             {cart.map((ele, i) => {
               return (
                 <Card maxW="sm" key={i}>

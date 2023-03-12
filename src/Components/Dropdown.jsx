@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./dropdown.css";
 const Dropdown = () => {
+  // Hooks and function for Dropdown 
     const [dropdownState, setDropdownState] = useState(false);
     const [dropdownValue, setDropdownValue] = useState("");
     const handleDropdownClick = () => {
       setDropdownState(!dropdownState);
     };
+    // Logout Login if user Want to logout..
   const Logout=()=>{
     alert("Logout")
     localStorage.removeItem("Token")

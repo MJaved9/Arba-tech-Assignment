@@ -16,10 +16,13 @@ import {
 } from "@chakra-ui/react";
 
 const SignUp = () => {
+  // Navigate for Next page Redirect
+  // Show and hide password for show hook
   const navigate=useNavigate()
   const [show, setShow] = React.useState(false)
   const handleClick = () => setShow(!show)
 
+  // Here is some fields for User Input hooks
   let data = JSON.parse(localStorage.getItem("Account"));
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -27,6 +30,7 @@ const SignUp = () => {
   const [email,setEmail]=useState("")
   const [confirmpassword,setConfirmPassword]=useState("")
 
+  // Here is Signup Logic for Create Account
   const handleSignup = () => {
     let payload={userName,fullName,email,password,confirmpassword}
     if(!(userName&&fullName&&email&&password&&confirmpassword)){
