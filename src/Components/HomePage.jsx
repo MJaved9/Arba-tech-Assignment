@@ -33,7 +33,7 @@ const HomePage = () => {
   // Here is welcome Logic for is user visit first time show Prompt accept and reject
   let welcome1=JSON.parse(localStorage.getItem("Welcome1"))
   if(!welcome1){
-    let text="welcome hii this is profile page.."
+    let text="welcome hii this is Home page.."
     if(window.confirm(text) === true) {
       text = "You pressed OK!";
       localStorage.setItem("Welcome1",JSON.stringify("Yes"))

@@ -30,13 +30,13 @@ const Cart = () => {
     }
   }
   // cart lS for added cart Item..
-  let cart=JSON.parse(localStorage.getItem("cart"))
+  let cart=JSON.parse(localStorage.getItem("cart"))||1
   return (
     <Box p="15">
       <Box p="25">
       <SimpleGrid columns={[1, 1, 2, 4]} spacing="40px">
         {/* Fetching all cart data and add in simple grid  */}
-            {cart.map((ele, i) => {
+            {cart.length>1 && cart.map((ele, i) => {
               return (
                 <Card maxW="sm" key={i}>
                   <CardBody>
