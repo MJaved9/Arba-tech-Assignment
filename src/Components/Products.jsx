@@ -56,7 +56,7 @@ const Products = () => {
 
 
   useEffect(() => {
-    fetchData(" https://fakestoreapi.com/products")
+    fetchData("https://fakestoreapi.com/products")
       .then((res) => {
         setData(res);
         // console.log(res);
@@ -64,7 +64,7 @@ const Products = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  },[]);
 
   if (token) {
     return (

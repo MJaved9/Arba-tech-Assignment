@@ -26,7 +26,7 @@ const Profile = () => {
 // he need to Login..
   if(token){
     return (
-      <Box>
+      <Box p="155">
         {/* <Box>
           <Img src=""/>
         </Box> */}

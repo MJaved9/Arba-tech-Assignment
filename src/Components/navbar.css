@@ -1,0 +1,97 @@
+.header {
+  height: 100px;
+  background: rgb(62, 165, 58);
+  padding: 0 20px;
+  color: rgb(250, 250, 250);
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  line-height: 100px;
+  float: left;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  gap:5px;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu a {
+  color: rgb(250, 250, 250);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.show-menu-btn,
+.hide-menu-btn {
+  transition: 0.4s;
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+  display: none;
+}
+
+.show-menu-btn {
+  margin-left: auto;
+}
+
+.show-menu-btn i {
+  line-height: 100px;
+}
+
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover {
+  color: rgb(209, 15, 15);
+}
+
+#chk {
+  position: absolute;
+  visibility: hidden;
+  z-index: -1111;
+}
+
+@media screen and (max-width: 800px) {
+  .show-menu-btn,
+  .hide-menu-btn {
+    display: block;
+  }
+  .menu {
+    align-items: center;
+    display: block;
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    background: rgb(231, 112, 112);
+    right: -100%;
+    top: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    line-height: normal;
+    transition: 0.7s;
+    z-index: 3;
+  }
+  .menu a {
+    display: block;
+    padding: 30px;
+  }
+
+  .hide-menu-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+  #chk:checked ~ .menu {
+    right: 0;
+  }
+}

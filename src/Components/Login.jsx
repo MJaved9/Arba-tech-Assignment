@@ -30,6 +30,7 @@ const Login = () => {
         localStorage.setItem("Token",JSON.stringify(Math.floor(1000 + Math.random() * 9000)))
         setLog(true)
         console.log(log+"first")
+        // window.location.reload();
         alert("Login Successfully");
         navigate("/")
       }
